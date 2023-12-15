@@ -1,0 +1,62 @@
+%Sine Signal
+clc;
+t=0:0.1:pi;
+y1=sin(2*pi*t);
+subplot(3,2,1);
+plot(t,y1);
+ylabel('Voltage (volts)--->');
+xlabel('Time (sec)--->');
+title('Sine Sequence');
+
+%Cosine Signal
+clc;
+t=0:0.1:pi;
+y2=cos(2*pi*t);
+subplot(3,2,2);
+plot(t,y2);
+ylabel('Voltage (volts)--->');
+xlabel('Time (sec)--->');
+title('Cosine Sequence');
+
+%Ramp Signal
+clc;
+n1=input('Enter the length of the ramp signal:');
+t=0:n1;
+subplot(3,2,3);
+stem(t,t);
+ylabel('Voltage (volts)--->');
+xlabel('N--->');
+title('Ramp Sequence');
+
+%Exponential Sequence
+clc;
+n2=input('Enter the length of the exponential sequence:');
+t=0:n2;
+a=input('Enter the value for "a":');
+y3=exp(a*t);
+subplot(3,2,4);
+stem(t,y3);
+ylabel('Voltage (volts)--->');
+xlabel('N--->');
+title('Exponential Sequence');
+
+%Unit Step Signal
+clc;
+n3=input('Enter the length for unit sequence:');
+t=0:1:n3-1;
+y4=ones(1,n3);
+subplot(3,2,5);
+stem(t,y4);
+ylabel('Voltage (volts)--->');
+xlabel('N--->');
+title('Unit Step Sequence');
+
+%Unit Impulse Signal
+clc;
+t=-8:8;
+y5=[zeros(1,8),ones(1,1),zeros(1,8)];
+subplot(3,2,6);
+stem(t,y5);
+ylabel('Voltage (volts)--->');
+xlabel('N--->');
+title('Unit Impulse Sequence');

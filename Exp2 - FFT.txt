@@ -1,0 +1,28 @@
+Calculate FFT and plot Magnitude and Phase response for the same
+
+clc;
+x=[0 1 2 3];
+N= length(x);
+X=fft(x,N);
+
+t=0:N-1;
+subplot(3,1,1);
+stem(t,x);
+xlabel('Time(sec)');
+ylabel('Amplitude');
+title('Time domain-input sequence')
+
+subplot(3,1,2);
+stem(t,X);
+xlabel('Frequency');
+ylabel('|X(k)|');
+title('Frequency domain-Magnitude response')
+
+subplot(3,1,3);
+stem(t,angle(X));
+xlabel('Frequency');
+ylabel('Phase');
+title('Frequency domain-Phase response')
+
+X
+angle(X)

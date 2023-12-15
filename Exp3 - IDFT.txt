@@ -1,0 +1,20 @@
+Calculate IDFT using ifft function
+
+clear all;
+close all;
+clc;
+n=input('Enter length of sequence:');
+x_k=input('Enter input sequence:');
+k=0:1:n-1;
+subplot(2,1,1);
+stem(k,x_k);
+xlabel('Frequency-->');
+ylabel('X(k)');
+title('Input Sequence');
+
+x_n=ifft(x_k,n)
+subplot(2,1,2);
+stem(k,x_n);
+xlabel('time(sec)-->');
+ylabel('x(n)');
+title('Output Sequence');
